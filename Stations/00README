@@ -1,0 +1,17 @@
+Translation of station coordinates from LAT LON to X Y related to the hypocenter location that is taken as origin (0,0)
+
+How to use this folder:
+
+1. chmod +x compile.sh      make an executable script to compile
+2. ./compile.sh             compile fortran code
+3. chmod +x runstations.sh  make an executable script to run code
+4. ./runstations.sh         run the binary using your input file
+
+input files:
+stations_*.in
+
+output files:
+stations_*-utm.dat   name of stations and xy coordinates
+utm.dat              only xy coordinates
+
+see inside runstations.sh to see how the input file is read during the run-time

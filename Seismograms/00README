@@ -1,0 +1,38 @@
+
+
+1. go to /obs/
+cd obs/
+
+2. run the cut_data.m this cuts the data according to the P arrival times
+   you need to modify it according to your stations and arrival times
+   from Arrival_times/run/final_arrival_times.out remember to add the origin time!
+octave cut_data.m
+
+3. go back 
+cd ../
+
+4. make executable script
+chmod +x prepare.sh
+
+###header1.txt
+N=time samples at files
+Delta=time sampling rate
+ini=0 always
+
+5. prepare files to add zeros between origin time and P arrival time
+./prepare.sh
+
+6. run the code that adds zeros and filters the data
+matlab -nodisplay -nosplash < seismograms.m
+
+The output will be three files 
+obs_velo_ew
+obs_velo_ns
+obs_velo_zz
+all seismograms are concatanated
+
+7. cut the data from the concatanated files and puts them in separated files
+octave cut_out.m
+
+THE FILES INSIDE /obs/ MUST BE CUT AT THE ARRIVAL OF P
+

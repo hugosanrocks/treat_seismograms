@@ -1,0 +1,13 @@
+32                      ! Number of stations
+12.45                   ! Hypocenter depth (km)
+0.2                     ! h (regular velocity model grid increment, km)
+10.0                    ! Stations' distance from hypocenters' grid boundaries (km)
+          < Velocity Structure >
+7                       ! Number of layers (Iglesias et al., 2001; Coast-Parallel Structure)
+1.0  3.80 2.00 1.986
+4.0  5.70 3.20 2.594
+5.0  5.80 3.45 2.642
+10.0 6.20 3.65 2.754
+10.0 6.60 3.80 2.882
+10.0 7.20 4.10 3.074
+50.0 7.8  4.55 3.266

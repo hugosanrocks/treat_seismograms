@@ -1,0 +1,59 @@
+Estimate P and S arrival times from hypocenter to station locations through ray theory
+
+How to use the folders inside:
+
+Compilation of code
+1. go to /src/
+2. make clean
+3. make
+This will create a binary inside /bin/arrtime
+
+Run the binary
+1. go to /run/
+cd run
+2. make executable script for runtime
+chmod +x execute.sh
+3. copy stations-utm.dat from /Stations/ to Arrival_times/run/
+cp ../../Stations/stations-utm.dat .
+4. run the code
+./execute.sh
+5. prepare arrival_times.out this is the same as output.dat but without sation names
+6. run sum_arr.m to add the origin time
+octave sum_arr.m
+
+input:
+arrtime.in          -> file with input parameters
+stations-utm.dat    -> file with station xy locations
+           DO NOT CHANGE THE NAMES OF INPUT FILES
+
+output:
+output.dat          -> file with P and S arrival times
+arrival_times.out   -> same as output.dat but without names
+final_arrival_times.out   -> arrival times + origin time
+
+The code takes a while to finish. Be patient!
+
+Change run/arrtime.in according to your velocity model, number of stations and hypocenter depth
+
+try not to change the next parameters:
+0.2                     ! h (regular velocity model grid increment, km)
+10.0                    ! Stations' distance from hypocenters' grid boundaries
+
+Usual output screen without errors:
+
+../bin/arrtime < arrtime.in
+
+ +++++++++++++++++++++++++++++++++++++++++
+            PROGRAM: ARRTIME
+ +++++++++++++++++++++++++++++++++++++++++
+
+    Model grid: n1= 884  n2=1212  n3= 113
+
+    Remaining Sources:   1
+
+  Writing Arrival Times...
+
+ +++++++++++++++++++++++++++++++++++++++++
+
+
+
